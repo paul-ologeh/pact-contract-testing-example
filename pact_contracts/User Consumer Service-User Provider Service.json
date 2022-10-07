@@ -1,0 +1,81 @@
+{
+  "consumer": {
+    "name": "User Consumer Service"
+  },
+  "interactions": [
+    {
+      "description": "a request to create a user",
+      "request": {
+        "body": {
+          "age": 29,
+          "job_title": "Software Developer",
+          "name": "John",
+          "password": "john1234",
+          "phone_number": "+1975789024",
+          "surname": "Smith",
+          "username": "john1234"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "body": {
+            "$": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            }
+          },
+          "header": {}
+        },
+        "method": "POST",
+        "path": "/user"
+      },
+      "response": {
+        "body": {
+          "age": 42,
+          "id": "45e078aa-488c-48c9-b09b-f9882c7d1e9f",
+          "job_title": "Software Developer",
+          "name": "John",
+          "phone_number": "+48111222333",
+          "surname": "Doe",
+          "timestamp": "1970-01-01T00:00:00",
+          "username": "John42"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "body": {
+            "$": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            }
+          },
+          "header": {}
+        },
+        "status": 201
+      }
+    }
+  ],
+  "metadata": {
+    "pactRust": {
+      "consumer": "0.9.7",
+      "mockserver": "0.9.3",
+      "models": "0.4.5"
+    },
+    "pactSpecification": {
+      "version": "3.0.0"
+    }
+  },
+  "provider": {
+    "name": "User Provider Service"
+  }
+}

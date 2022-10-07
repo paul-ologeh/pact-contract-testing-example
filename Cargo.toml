@@ -1,0 +1,7 @@
+[workspace]
+
+members = [
+    "user_provider",
+    "user_consumer"
+]
+
