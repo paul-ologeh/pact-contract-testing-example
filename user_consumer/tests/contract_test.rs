@@ -68,7 +68,7 @@ async fn it_can_fetch_a_user() {
     let pact = PactBuilder::new("User Consumer Service", "User Provider Service")
         .output_dir("../pact_contracts")
         .interaction("a request to list a user", "", |mut i| async {
-            i.request.path(format!("/user/{}", user_out.id.to_string()));
+            i.request.path(format!("/user/{}", user_out.id));
             i.response
                 .content_type("application/json")
                 .json_body(like!(strip_null_fields(serde_json::json!(&user_out))));

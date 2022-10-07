@@ -2,7 +2,7 @@ use chrono::prelude::*;
 use serde_derive::{Deserialize, Serialize};
 use uuid::Uuid;
 
-#[derive(Deserialize, Serialize, PartialEq, Debug)]
+#[derive(Deserialize, Serialize, PartialEq, Eq, Debug)]
 pub struct UserIn {
     pub username: String,
     pub name: String,
@@ -13,7 +13,7 @@ pub struct UserIn {
     pub phone_number: Option<String>,
 }
 
-#[derive(Deserialize, Serialize, PartialEq, Debug)]
+#[derive(Deserialize, Serialize, PartialEq, Eq, Debug)]
 pub struct UserOut {
     pub id: Uuid,
     pub username: String,
